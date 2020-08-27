@@ -1,21 +1,32 @@
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
+from flask import Flask, jsonify, request
+import pickle
 
-# create df
-train = pd.read_csv('titanic.csv') # change file path
+# load model
+model = pickle.load(open('model.pkl','rb'))
 
-# drop null values
-train.dropna(inplace=True)
+# app
+app = Flask(__name__)
 
-# features and target
-target = 'Survived'
-features = ['Pclass', 'Age', 'SibSp', 'Fare']
+# routes
+@app.route('/', methods=['POST'])
 
-# X matrix, y vector
-X = train[features]
-y = train[target]
+def recommend():
+    # get data
+    data = request.get_json(force=True)
 
-# model 
-model = LogisticRegression()
-model.fit(X, y)
-model.score(X, y)
+    # convert data into dataframe
+    data_df = pd.DataFrame.from_dict(data,orient='index')
+    # Reccomendation
+    result = model.corrwith(data_df)
+
+    # send back to browser
+    #output = {'results': int(result[0])}
+    output = {'results': str(result[0])}
+
+    # return data
+    return jsonify(results=output)
+    
+    
+if __name__ == '__main__':
+    app.run(port = 5000, debug=True)

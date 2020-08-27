@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "727949643985",
+    "firebase_url": "https://fourth-year-research-project.firebaseio.com",
+    "project_id": "fourth-year-research-project",
+    "storage_bucket": "fourth-year-research-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727949643985:android:7a9a1ca17f62fa949375f0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727949643985-s4i0ng1je4pnl54sqa6sibecpql88fu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaOiP1XZOLZsvdPCGroRsSxV910Gw3-Rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727949643985-s4i0ng1je4pnl54sqa6sibecpql88fu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
